@@ -1,0 +1,19 @@
+
+<h1>Result</h1>
+
+<br> </br>
+
+  <%if @word_verified["found"] == true
+     if @letter_included %>
+        <%session[:score] += 3 %>
+        "Great"
+        "Total score = <%=session[:score]%> "
+     <% else %>
+        "Not in the grid"
+        <%end%>
+  <%else %>
+      Not an English word
+  <%end%>
+<br> </br>
+
+<%= link_to "Play again!", new_path %>
